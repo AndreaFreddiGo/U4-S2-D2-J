@@ -21,6 +21,14 @@ public class Main {
                 int N = Integer.parseInt(scanner.nextLine());
                 if (N <= 0) throw new NotValidIntegerException("Il numero deve essere maggiore di 0");
                 correctInput = true;
+                for (int i = 0; i < N; i++) {
+                    System.out.println("Inserisci una parola: ");
+                    stringSet.add(scanner.nextLine());
+                }
+                System.out.println("Il set contiene " + stringSet.size() + " elementi");
+                for (String word : stringSet) {
+                    System.out.println(word);
+                }
             } catch (NotValidIntegerException e) {
                 System.out.println(e.getMessage());
             } catch (NumberFormatException e) {
