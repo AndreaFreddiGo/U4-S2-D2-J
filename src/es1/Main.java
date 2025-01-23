@@ -23,11 +23,15 @@ public class Main {
                 correctInput = true;
                 for (int i = 0; i < N; i++) {
                     System.out.println("Inserisci una parola: ");
-                    stringSet.add(scanner.nextLine());
+                    String newWord = scanner.nextLine();
+                    if (!stringSet.add(newWord)) {
+                        System.out.println("La parola " + newWord + " è già presente nel set");
+                    }
                 }
                 System.out.println("Il set contiene " + stringSet.size() + " elementi");
                 for (String word : stringSet) {
                     System.out.println(word);
+                    scanner.close();
                 }
             } catch (NotValidIntegerException e) {
                 System.out.println(e.getMessage());
