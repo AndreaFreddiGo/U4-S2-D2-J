@@ -13,6 +13,7 @@ public class Main {
 
     public static void customSet() {
         HashSet<String> stringSet = new HashSet<>();
+        HashSet<String> doubleStringSet = new HashSet<>();
         boolean correctInput = false;
         while (!correctInput) {
             Scanner scanner = new Scanner(System.in);
@@ -25,11 +26,15 @@ public class Main {
                     System.out.println("Inserisci una parola: ");
                     String newWord = scanner.nextLine();
                     if (!stringSet.add(newWord)) {
-                        System.out.println("La parola " + newWord + " è già presente nel set");
+                        doubleStringSet.add(newWord);
                     }
                 }
                 System.out.println("Il set contiene " + stringSet.size() + " elementi");
                 for (String word : stringSet) {
+                    System.out.println(word);
+                }
+                System.out.println("E nella digitazione sono state ripetute queste parole:");
+                for (String word : doubleStringSet) {
                     System.out.println(word);
                     scanner.close();
                 }
